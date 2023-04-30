@@ -1,5 +1,17 @@
 <script setup lang="ts">
+import {ref, watch} from 'vue'
+const boxRef = ref()
 
+function animate (){
+  requestAnimationFrame(animate)
+
+  if(!boxRef.value) return
+  boxRef.value.rotation.x += 0.01
+  boxRef.value.rotation.y += 0.01
+}
+
+
+animate()
 </script>
 
 <template>
@@ -10,8 +22,9 @@
     />
       <TresScene>
         <TresMesh 
-        :position="[0,2,0]"
-        :rotation="[0,Math.PI/6,Math.PI/6]">
+        ref="boxRef"
+       
+        >
           <TresBoxGeometry :args="[1,1,1]"/>
           <TresMeshNormalMaterial/>
         </TresMesh>
