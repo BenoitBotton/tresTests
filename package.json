@@ -10,6 +10,8 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@tresjs/core": "^1.8.1",
+    "three": "^0.152.2",
     "vue": "^3.2.47"
   },
   "devDependencies": {
