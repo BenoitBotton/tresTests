@@ -1,17 +1,16 @@
 <script setup lang="ts">
+import { useRenderLoop } from '@tresjs/core';
 import {ref, watch} from 'vue'
 const boxRef = ref()
 
-function animate (){
-  requestAnimationFrame(animate)
+const {onLoop} =useRenderLoop()
 
+
+onLoop(({delta, elapsed})=>{
   if(!boxRef.value) return
-  boxRef.value.rotation.x += 0.01
-  boxRef.value.rotation.y += 0.01
-}
-
-
-animate()
+  boxRef.value.rotation.z+=delta
+  boxRef.value.rotation.y=elapsed
+})
 </script>
 
 <template>
