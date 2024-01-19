@@ -5,7 +5,7 @@ import Vector from './Vector.vue'
 </script>
 
 <template>
-  <TresCanvas window-size preset="realistic">
+  <TresCanvas window-size preset="realistic" v-bind="{ clearColor: '#4f4f4f' }">
     <TresPerspectiveCamera :args="[75, 1, 0.1, 1000]" :position="[5, 2, 5]" :look-at="[0, 0, 0]" />
     <OrbitControls />
     <TresMesh>
@@ -14,8 +14,8 @@ import Vector from './Vector.vue'
       <Vector />
     </TresMesh>
     <TresAmbientLight :intensity=".2" />
-    <TresDirectionalLight :intensity="1" :position="[500, 500, 0]" v-light-helper />
-    <TresDirectionalLight :intensity="0.5" :position="[-500, 500, 0]" v-light-helper />
+    <TresDirectionalLight :intensity="1" :position="[500, 500, 0]" />
+    <TresDirectionalLight :intensity="0.5" :position="[-500, 500, 0]" />
     <TresGridHelper />
     <TresAxesHelper />
   </TresCanvas>
