@@ -8,9 +8,8 @@ const exists = ref(true)
 </script>
 
 <template>
-  <div style="height: 80vh">
   <input type="checkbox" v-model="exists" /> Show vector
-  <TresCanvas style="width: 80vw" preset="realistic" v-bind="{ clearColor: '#4f4f4f' }">
+  <TresCanvas style="height: 100vh" preset="realistic" v-bind="{ clearColor: '#4f4f4f' }">
     <TresPerspectiveCamera :args="[75, 1, 0.1, 1000]" :position="[5, 2, 5]" :look-at="[0, 0, 0]" />
     <OrbitControls />
     <TresMesh>
@@ -24,5 +23,4 @@ const exists = ref(true)
     <TresGridHelper />
     <TresAxesHelper />
   </TresCanvas>
-</div>
 </template>
