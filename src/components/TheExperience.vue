@@ -15,8 +15,8 @@ const exists = ref(true)
     <TresMesh>
       <TresTorusGeometry :args="[1, 0.5, 16, 32]" />
       <TresMeshLambertMaterial color="orange" />
-      <Vector v-if="exists" rotation-x="1.5707"/>
     </TresMesh>
+    <Vector v-if="exists" rotation-x="1.5707"/>
     <TresAmbientLight :intensity=".2" />
     <TresDirectionalLight :intensity="1" :position="[500, 500, 0]" />
     <TresDirectionalLight :intensity="0.5" :position="[-500, 500, 0]" />
