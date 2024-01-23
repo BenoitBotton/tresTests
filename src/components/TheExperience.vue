@@ -19,7 +19,7 @@ const showDonut = ref(false)
       <TresMeshLambertMaterial color="orange" />
     </TresMesh>
     <TresGroup v-if="showVector" rotation-x="-1.5707">
-      <Vector />
+      <Vector txt="Donut" color="green" />
     </TresGroup>
     <TresAmbientLight :intensity=".2" />
     <TresDirectionalLight :intensity="1" :position="[500, 500, 0]" />

@@ -1,7 +1,7 @@
 <template>
     <TresArrowHelper :args="[new THREE.Vector3(0, 1, 0), , 3, color]" />
     <Suspense>
-        <Text3D text="TresJS" :font="fontPath" :position-y="1.5">
+        <Text3D :text="txt" :font="fontPath" :position-y="1.5">
             <TresMeshLambertMaterial :color="color"/>
         </Text3D>
     </Suspense>
@@ -11,9 +11,14 @@
 import * as THREE from 'three'
 import { Text3D } from '@tresjs/cientos'
 
+const props = defineProps({
+    txt: String,
+    color: String,
+})
+
 const fontPath =
   'https://raw.githubusercontent.com/Tresjs/assets/main/fonts/FiraCodeRegular.json';
-const color = 'red'
+
 </script>
 
 <style scoped></style>
