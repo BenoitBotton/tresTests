@@ -1,12 +1,12 @@
 <template>
-    <TresGroup :rotation-z="theta">
+    <TresGroup :rotation-y="theta">
         <TresGroup :position-x="radius" :position-y="height">
             <TresGroup :rotation-x="x_rot" :rotation-y="y_rot" :rotation-z="z_rot">
                 <TresMesh>
                     <TresTorusGeometry :args="[1, 0.5, 16, 32]" />
                     <TresMeshLambertMaterial :color="color" />
                 </TresMesh>
-                <TresGroup v-if="showVector" rotation-x="-1.5707">
+                <TresGroup :visible="showVector" rotation-x="-1.5707">
                     <Vector :txt="txt" :color="color" />
                 </TresGroup>
             </TresGroup>
